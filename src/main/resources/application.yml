@@ -1,0 +1,22 @@
+
+spring:
+  profiles:
+    active: develop
+  http.encoding:
+    charset: UTF-8
+    enabled: true
+    force: true
+  freemarker:
+    suffix: .ftlh
+
+server:
+  servlet:
+    session:
+      cookie:
+        http-only: true
+        secure: true
+
+---
+
+spring:
+  profiles: develop
