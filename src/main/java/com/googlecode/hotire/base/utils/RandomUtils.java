@@ -1,5 +1,7 @@
 package com.googlecode.hotire.base.utils;
 
+import com.googlecode.hotire.base.domain.Person;
+import me.xdrop.jrand.JRand;
 import org.passay.CharacterRule;
 import org.passay.EnglishCharacterData;
 import org.passay.PasswordGenerator;
@@ -16,5 +18,17 @@ public class RandomUtils {
 
     public static String generatePassword() {
         return new PasswordGenerator().generatePassword(8, rules);
+    }
+    public static Person createRandomPerson() {return  PersonFactory.createRandomPerson();}
+
+    static class PersonFactory {
+        private PersonFactory(){}
+        public static Person createRandomPerson() {
+            Person instance = new Person();
+            instance.setAge(JRand.age().gen());
+            instance.setName(JRand.name().gen());
+            instance.setGender(JRand.gender().gen());
+            return instance;
+        }
     }
 }

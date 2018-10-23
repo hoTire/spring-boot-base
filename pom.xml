@@ -68,6 +68,11 @@
             <artifactId>passay</artifactId>
             <version>${passay-version}</version>
         </dependency>
+        <dependency>
+            <groupId>me.xdrop</groupId>
+            <artifactId>jrand</artifactId>
+            <version>0.2.5-alpha</version>
+        </dependency>
 
 
         <!--webjars -->
