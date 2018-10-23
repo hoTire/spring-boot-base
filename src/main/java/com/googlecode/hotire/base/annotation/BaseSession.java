@@ -1,4 +1,4 @@
-package com.kakaocorp.mis.bone.annotation;
+package com.googlecode.hotire.base.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -7,5 +7,5 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.PARAMETER)
-public @interface EmployeeSession {
+public @interface BaseSession {
 }

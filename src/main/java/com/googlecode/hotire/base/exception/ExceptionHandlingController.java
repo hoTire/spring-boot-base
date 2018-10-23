@@ -42,7 +42,7 @@ public class ExceptionHandlingController {
         if (exception.getCause() != null) log.error("Cause : " + exception.getCause().toString());
         return getModelAndView(HttpStatus.INTERNAL_SERVER_ERROR);
     }
-    
+
     private ModelAndView getModelAndView(HttpStatus status) {
         ModelAndView mv = new ModelAndView("/error/" + status.value());
         log.info(mv.getViewName());
