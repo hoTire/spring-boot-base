@@ -9,4 +9,5 @@ public class Account {
     private Integer id;
     private String email;
     private String password;
+    private BaseSessionInfo baseSessionInfo;
 }
