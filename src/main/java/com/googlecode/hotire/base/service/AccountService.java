@@ -3,6 +3,7 @@ package com.googlecode.hotire.base.service;
 import com.googlecode.hotire.base.domain.Account;
 import com.googlecode.hotire.base.repository.AccountRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -18,7 +19,7 @@ import java.util.List;
 
 @Slf4j
 @Service
-public class AccountService implements UserDetailsService {
+public class AccountService implements UserDetailsService, InitializingBean {
 
     @Autowired
     AccountRepository accountRepository;
@@ -30,10 +31,13 @@ public class AccountService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Account account = accountRepository.findByEmail(username);
 
-        if (account == null) return null;
-
         List<GrantedAuthority> authorities = new ArrayList<>();
         authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
+
+        if (account == null) {
+            log.info("Query returned no results for user : " + username);
+            throw new UsernameNotFoundException("Invalid username and password.");
+        }
 
         return new User(account.getEmail(), account.getPassword(), authorities);
     }
@@ -41,5 +45,13 @@ public class AccountService implements UserDetailsService {
     public Account create(Account account) {
         account.setPassword(passwordEncoder.encode(account.getPassword()));
         return accountRepository.save(account);
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        Account account = new Account();
+        account.setEmail("admin");
+        account.setPassword(passwordEncoder.encode("1234"));
+        accountRepository.save(account);
     }
 }

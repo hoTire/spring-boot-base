@@ -19,4 +19,5 @@ public class BaseController {
     public ModelAndView hello() {
         return new ModelAndView("hello");
     }
+
 }
