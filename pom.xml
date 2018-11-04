@@ -74,7 +74,6 @@
             <version>0.2.5-alpha</version>
         </dependency>
 
-
         <!--webjars -->
         <dependency>
             <groupId>org.webjars.bower</groupId>
