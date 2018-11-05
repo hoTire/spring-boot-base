@@ -31,4 +31,10 @@ public class BaseController {
         return message;
     }
 
+    @GetMapping("/test/aop")
+    public String testAOP() {
+        log.info("test");
+        return "Hello AOP";
+    }
+
 }
