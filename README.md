@@ -6,6 +6,7 @@
 ### 주요 특징
 - security
 - freemarker
+- jpa (mysql)
 
 
 ### logging filter 
