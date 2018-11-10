@@ -4,9 +4,10 @@
 보다 빠르고 편리하게 개발하기 위한 기본 코드
 
 ### 주요 특징
-- security
-- freemarker
-- jpa (mysql)
+- Spring Boot(2.1.0)
+- Security
+- Freemarker
+- Jpa (mysql)
 
 
 ### logging filter 
