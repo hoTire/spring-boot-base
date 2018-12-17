@@ -2,6 +2,7 @@ package com.googlecode.hotire.base.service;
 
 import com.googlecode.hotire.base.entity.Book;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class BookServiceTest {
     @Test
     public void findAll() {
         List<Book> result = bookService.findAll();
-        log.info(result.toString());
+        assertNotNull(result);
     }
 
     @Test
@@ -32,6 +33,6 @@ public class BookServiceTest {
         Book book = new Book();
         book.setName("TEST BOOK");
         Book result = bookService.save(book);
-        log.info(result.toString());
+        assertNotNull(result);
     }
 }

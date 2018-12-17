@@ -77,13 +77,10 @@
             <artifactId>jrand</artifactId>
             <version>0.2.5-alpha</version>
         </dependency>
-
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
-
-
 
         <!--webjars -->
         <dependency>

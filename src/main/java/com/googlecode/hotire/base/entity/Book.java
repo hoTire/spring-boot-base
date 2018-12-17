@@ -21,5 +21,4 @@ public class Book {
     @CreationTimestamp
     private Date created;
 
-
 }
