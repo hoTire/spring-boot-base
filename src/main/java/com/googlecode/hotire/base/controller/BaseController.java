@@ -1,7 +1,9 @@
 package com.googlecode.hotire.base.controller;
 
 import com.googlecode.hotire.base.domain.Message;
+import com.googlecode.hotire.base.service.BaseService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,6 +13,9 @@ import org.springframework.web.servlet.ModelAndView;
 @Slf4j
 @RestController
 public class BaseController {
+
+    @Autowired
+    BaseService baseService;
 
     @GetMapping({"/","/home"})
     public ModelAndView index() {
@@ -35,6 +40,11 @@ public class BaseController {
     public String testAOP() {
         log.info("test");
         return "Hello AOP";
+    }
+
+    @GetMapping("/test/name")
+    public String test() {
+        return baseService.getName();
     }
 
 }
