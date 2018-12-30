@@ -1,6 +1,7 @@
 package com.googlecode.hotire.base.repository;
 
 import com.googlecode.hotire.base.domain.Account;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
@@ -21,4 +22,5 @@ public class AccountRepository {
     public Account findByEmail(String email) {
         return accounts.get(email);
     }
+
 }

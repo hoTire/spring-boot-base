@@ -1,4 +1,3 @@
-
 spring:
   profiles:
     active: develop
@@ -8,6 +7,14 @@ spring:
     force: true
   freemarker:
     suffix: .ftlh
+  datasource:
+    url: jdbc:mysql://localhost:3306/tireho?useSSL=false
+    username: tireho
+    password: tireho
+    jpa:
+      hibernate.ddl-auto: update
+      show-sql: true                        #  SQL 로그
+      properties.hibernate.format_sql: true #  SQL 문 보기 좋게
 
 server:
   servlet:
@@ -15,19 +22,10 @@ server:
       cookie:
         http-only: true
 
+
+
+
+
 app:
   name: base
   creator: tire.ho
-
----
-
-spring:
-  profiles: develop
-  datasource:
-    url: jdbc:mysql://localhost:3306/tireho?useSSL=false
-    username: tireho
-    password: tireho
-  jpa:
-    hibernate.ddl-auto: update
-    show-sql: true                        #  SQL 로그
-    properties.hibernate.format_sql: true #  SQL 문 보기 좋게

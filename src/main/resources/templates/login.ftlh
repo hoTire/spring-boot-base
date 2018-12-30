@@ -5,6 +5,7 @@
     <title>Spring Security Login</title>
 </head>
 <body>
+    <h1>Login</h1>
     <#if RequestParameters.logout??>
         <div>
             You have been logged out.
@@ -20,7 +21,7 @@
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         <div><label> User Name : <input type="text" name="username"/> </label></div>
         <div><label> Password: <input type="password" name="password"/> </label></div>
-        <div><input type="submit" value="Sign In"/></div>
+        <div><input type="submit" value="Login in" name="submit"/></div>
     </form>
 </body>
 </html>
