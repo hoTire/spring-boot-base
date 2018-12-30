@@ -1,4 +1,3 @@
-
 spring:
   profiles:
     active: develop
@@ -15,13 +14,14 @@ server:
       cookie:
         http-only: true
 
-
+app:
+  name: tire.ho
 ---
 
 spring:
   profiles: develop
   datasource:
-    url: jdbc:mysql://localhost:3306/tireho?useSSL=false
+    url:
     username: tireho
     password: tireho
   jpa:
