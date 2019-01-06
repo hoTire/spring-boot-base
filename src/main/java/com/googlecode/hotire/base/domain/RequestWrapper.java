@@ -1,8 +1,7 @@
 package com.googlecode.hotire.base.domain;
 
-import org.springframework.web.util.ContentCachingRequestWrapper;
-
 import javax.servlet.http.HttpServletRequest;
+import org.springframework.web.util.ContentCachingRequestWrapper;
 
 /**
  * getContentAsByteArray method has to read HttpServletRequest getInputStream
