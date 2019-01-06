@@ -11,10 +11,12 @@ spring:
     url: jdbc:mysql://localhost:3306/tireho?useSSL=false
     username: tireho
     password: tireho
-    jpa:
-      hibernate.ddl-auto: update
-      show-sql: true                        #  SQL 로그
-      properties.hibernate.format_sql: true #  SQL 문 보기 좋게
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties.hibernate.format_sql: true
 
 server:
   servlet:

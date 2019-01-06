@@ -1,18 +1,16 @@
 package com.googlecode.hotire.base.service;
 
+import static org.junit.Assert.assertNotNull;
+
 import com.googlecode.hotire.base.entity.Book;
+import java.util.List;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import java.util.List;
-
-import static org.junit.Assert.*;
 
 @ActiveProfiles("develop")
 @RunWith(SpringRunner.class)
@@ -30,8 +28,7 @@ public class BookServiceTest {
 
     @Test
     public void save() {
-        Book book = new Book();
-        book.setName("TEST BOOK");
+        Book book = Book.builder().name("TEST BOOK").build();
         Book result = bookService.save(book);
         assertNotNull(result);
     }
