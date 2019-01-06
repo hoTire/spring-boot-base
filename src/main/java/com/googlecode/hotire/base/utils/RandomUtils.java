@@ -1,13 +1,12 @@
 package com.googlecode.hotire.base.utils;
 
 import com.googlecode.hotire.base.domain.Person;
+import java.util.Arrays;
+import java.util.List;
 import me.xdrop.jrand.JRand;
 import org.passay.CharacterRule;
 import org.passay.EnglishCharacterData;
 import org.passay.PasswordGenerator;
-
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * Passey
