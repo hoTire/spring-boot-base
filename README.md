@@ -5,9 +5,11 @@
 
 ### 주요 특징
 - Spring Boot(2.1.0)
+- MVC
 - Security
 - Freemarker
 - Jpa (mysql)
+- JUnit 5 and 4
 
 
 ### logging filter 
