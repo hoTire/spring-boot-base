@@ -15,6 +15,9 @@
 ### logging filter 
 - ContentCachingRequestWrapper 적용 (InputStream을 여러번 읽기 위해서)
 
+### NotProfile
+- Conditional, Profile을 이용한 Custom Annotation 
+- 해당 Profile을 제외하고 빈 등록
 
 
 
