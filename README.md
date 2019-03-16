@@ -20,4 +20,10 @@
 - 해당 Profile을 제외하고 빈 등록
 
 
+### SessionAttributes && ModelAttribute
+- 어노테이션으로 모델 정보를 자동으로 세션에 넣어준다. ModelAttribute를 통해 세션 데이터를 바인딩할 수 있다. 
+
+### InitBinder && Custom Validator
+- 우아한 데이터 바인딩
+
 
