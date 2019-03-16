@@ -55,12 +55,35 @@ class PersonControllerTest {
   void patch_person() throws Exception {
     final Person person = RandomUtils.createRandomPerson();
     when(personService.patch(person)).thenReturn(person);
+    person.setId(1000);
+    person.setAge(20);
 
+    final String json = objectMapper.writeValueAsString(person);
+    log.info(json);
+
+    person.setId(1);
+    MockHttpSession session = new MockHttpSession();
+    session.setAttribute("person", person);
+
+    mockMvc.perform(patch("/test/person")
+        .session(session)
+        .contentType(MediaType.APPLICATION_JSON)
+        .content(json))
+      .andExpect(status().isOk())
+      .andDo(print());
+  }
+
+  @DisplayName("청소년")
+  @Test
+  void patch_person_bad_request() throws Exception {
+    final Person person = RandomUtils.createRandomPerson();
+    when(personService.patch(person)).thenReturn(person);
+    person.setAge(19);
     MockHttpSession session = new MockHttpSession();
     session.setAttribute("person", person);
 
     mockMvc.perform(patch("/test/person").session(session))
-      .andExpect(status().isOk())
+      .andExpect(status().isBadRequest())
       .andDo(print());
   }
 
